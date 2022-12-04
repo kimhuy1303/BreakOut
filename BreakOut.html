@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Game break wall</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url(./images/background.jpg);
+    }
+    canvas {
+        background: #eee;
+        display: none;
+        margin: 0 auto;
+    }
+    #pauseGame {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        /* bottom: 100px; */
+        height: 600px;
+        width: 600px;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+
+    #menu-start-game {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 600px;
+        height: 600px;
+        box-sizing: border-box;
+        border: 3px solid #ef738e;
+        box-shadow: 0 0 1px #efb9bc, 0 0 2px #efb9bc, 0 0 6px #efb9bc, 0 0 12px #efb9bc, inset 0 0 1px #efb9bc, inset 0 0 2px #efb9bc, inset 0 0 6px #efb9bc, inset 0 0 12px #efb9bc;
+    }
+
+    #border {
+        width: 650px;
+        height: 650px;
+        margin: 0 auto;
+        margin-top:40px;
+        border: 3px solid #93c3fe;
+        box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+    }
+
+    .logo {
+        font-family: "Righteous";
+        font-style: normal;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin-top: -20px;
+        /* text-align: center;/ */
+        display: block;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo p {
+        color: #fefcfe;
+        left: 22%;
+        position: absolute;
+        text-shadow: 2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f,
+          0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f,
+          1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f;
+        
+    }
+    .logo i {
+        font-size: 55px;
+        position: absolute;
+        left: 12%;
+        transform: translateY(-4px);
+        /* display: block; */
+        color: #f9c0cc;
+    }
+    #username {
+        width: 350px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0);
+        color:  #fefcfe;
+        border: 3px solid #93c3fe;
+        box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+    }
+
+    #password {
+        width: 350px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0);
+        color:  #fefcfe;
+        border: 3px solid #93c3fe;
+        box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+    }
+
+    .form-group {
+        padding: 8px;
+        position: relative;
+    }
+
+    form {
+        margin: -70px 0 0 0;
+        position: relative;
+    }
+
+    #btnPassword {
+        color: white;
+        left: 85%;
+        top: 30%;
+        position: absolute;
+        font-size: 25px;
+        opacity: 0.3;
+    }
+    #btnPassword:hover{
+        cursor: pointer;
+        opacity: 1;
+    }
+<!--  -->
+    #start {
+        position:absolute;
+        color: white;
+        font-family: "Kanit";
+        font-size: 18px;
+        font-weight: bold;
+        width: 97%;
+        background-color: rgba(255, 255, 255, 0);
+        top: 105%;
+        left: 1%;
+        right: 0;
+        border: 3px solid #d77e91;
+        box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2, 0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2, inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+    }
+
+    #start:hover {
+        background-color: rgba(215, 70, 70, 0.365);
+
+    }
+    </style>
+  </head>
+  <body>
+    <!-- pause -->
+    <div id="border">
+        <div id="menu-start-game">
+            <div class="logo">
+                <i class="ph-target"></i>
+                <p>BRICK BREAKER</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <input
+                        id="username"
+                        type="text"
+                        class="form-control"
+                        placeholder="Username"
+                        name="username"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        id="password"
+                        type="text"
+                        class="form-control"
+                        placeholder="Password"
+                        name="password"
+                    />
+                    <i class="ph-eye-slash" id="btnPassword"></i>
+                </div>
+                <p id="alert"></p>
+                <button
+                onclick="loop()"
+                id="start"
+                type="button"
+                class="btn btn-default"
+                id="addBtn"
+                >
+                START GAME
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="pauseGame"></div>
+
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+  </body>
+  <script src="index.js"></script>
+</html>
