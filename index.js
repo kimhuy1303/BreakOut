@@ -1,7 +1,7 @@
 var canvas = document.getElementById("myCanvas");
-var stopaddBtn = document.getElementById("stop");
-var contaddBtn = document.getElementById("cont");
-var startaddBtn = document.getElementById("start");
+var stopBtn = document.getElementById("stop");
+var contBtn = document.getElementById("cont");
+var startBtn = document.getElementById("start");
 var pauseGame = document.getElementById("pauseGame");
 var menuStart = document.getElementById("menu-start-game");
 var border = document.getElementById("border");
@@ -32,7 +32,6 @@ var passedLevel = false;
 var maxLevel = 5;
 var gameOver = false;
 var brick = {
-  row: 3,
   col: 9,
   width: 50,
   height: 15,
@@ -40,9 +39,18 @@ var brick = {
   setTop: 50,
   setLeft: 35,
 };
+if(levels == 1){
+  brick.row=3;
+}
+if(levels == 2){
+  brick.row= 4;
+}
+if(levels == 3){
+  brick.row = 5;
+}
 var bricks = [];
 function createBricks() {
-  for (var c = 0; c < brick.col; c++) {
+  for (var c = 0; c < brick.col; c++) { 
     bricks[c] = [];
     for (var r = 0; r < brick.row; r++) {
       bricks[c][r] = { x: 0, y: 0, status: true };
@@ -50,12 +58,24 @@ function createBricks() {
   }
 }
 createBricks();
+//audio :
+var hitPaddle = new Audio();
+hitPaddle.src ="audio/sounds_hitpaddle.wav";
+var hitBounds = new Audio();
+hitBounds.src ="audio/sounds_hitbounds.wav";
+var hitWalls = new Audio();
+hitWalls.src ="audio/sounds_hitbounds.wav";
+var win = new Audio();
+win.src = "audio/sounds_wingame.wav";
+var lostLife = new Audio();
+lostLife.src = "audio/sounds_lostlife.wav";
+var lose = new Audio();
+lose.src = "audio/sounds_gameover.wav";
 //function:
 document.addEventListener("keydown", keyDownHandle, false);
 document.addEventListener("keyup", keyUpHandle, false);
-document.addEventListener("keydown", pauseaddBtn, false);
+document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
-
 function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
     startGame = true;
@@ -123,7 +143,7 @@ function drawLives() {
   ctx.fillText("Lives: " + lives, 510, 20);
 }
 
-function pauseaddBtn(event) {
+function pauseBtn(event) {
   if (event.keyCode == 32 && play) {
     pause = !pause;
     console.log(pause);
@@ -135,9 +155,9 @@ function pauseaddBtn(event) {
       cont();
     }
   }
-  if (event.keyCode == 9 && play) {
-    console.log(levels);
-  }
+  // if (event.keyCode == 9 && play) {
+  //   console.log(levels);
+  // }
 }
 function keyDownHandle(e) {
   if (!pause) {
@@ -173,15 +193,9 @@ function collisionDetection() {
         ) {
           dy = -dy;
           b.status = !b.status;
+          // hitBounds.ended();
+          hitBounds.play();
           score++;
-          // if(score == brick.row*brick.col){
-          // // if(score == 1){
-          //     // alert("VICTORY!!");
-          //     //
-          //    levelUp();
-          //     // draw();
-          //     // document.location.reload();
-          // }
         }
       }
     }
@@ -198,7 +212,7 @@ function stop() {
 }
 function cont() {
   stopMove = false;
-  // contaddBtn.style.display="none";
+  // contBtn.style.display="none";
   dx = keepX;
   dy = keepY;
 }
@@ -233,17 +247,20 @@ function resetBall() {
 function ball_wall() {
   if (x + dx > canvas.width - ballRadius || x - ballRadius < 0) {
     dx = -dx;
+    hitWalls.play();
   }
   if (y - ballRadius < 0) {
     dy = -dy;
+    hitWalls.play();
   }
   if (y + ballRadius > canvas.height) {
     lives--;
     startGame = false;
+    lostLife.play();
     if (lives <= 0) {
       alert("GAME OVER");
       gameOver = true;
-
+      lose.play();
       document.location.reload();
     } else {
       resetBall();
@@ -262,6 +279,8 @@ function handleBall() {
     let angle = collisionPoint * (Math.PI / 3);
     dx = ballSpeed * Math.sin(angle);
     dy = -ballSpeed * Math.cos(angle);
+    hitPaddle.play();
+
   }
 }
 function levelUp() {
@@ -274,19 +293,16 @@ function levelUp() {
   if (isLevelDone) {
     if (levels >= maxLevel) {
       gameOver = true;
+      win.play();
       alert("Thắng rồi chơi gì nữa?");
       location.reload();
       return;
     }
-    // brick.col += levels;
-    brick.row += levels;
-    // brick.padding -= 10;
-    // brick.setLeft -= 5;
-    // brick.width -= 20;
+    brick.row = brick.row + 1;
     createBricks();
     resetBall();
     levels++;
-
+    win.play();
     startGame = false;
   }
 }
@@ -304,7 +320,7 @@ function update() {
   levelUp();
 }
 function draw() {
-  startaddBtn.style.display = "none";
+  startBtn.style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawLevel();
@@ -327,4 +343,3 @@ function loop() {
     moveBall();
   }
 }
-
