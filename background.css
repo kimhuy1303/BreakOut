@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: 100%;
-  background-image: url(background.jpg);
+  background-image: url(./images/background.jpg);
 }
 #myCanvas {
   background: #eee;
