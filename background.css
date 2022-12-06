@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(background.jpg);
+}
+#myCanvas {
+  background: #eee;
+  display: none;
+  margin: 0 auto;
+}
+#pauseGame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* bottom: 100px; */
+  height: 600px;
+  width: 600px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+#menu-start-game {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 600px;
+  height: 600px;
+  box-sizing: border-box;
+  border: 3px solid #e83a91;
+  box-shadow: 0 0 1px #f199ca, 0 0 2px #f199ca, 0 0 6px #f199ca, 0 0 12px #f199ca, inset 0 0 1px #f199ca, inset 0 0 2px #f199ca, inset 0 0 6px #f199ca, inset 0 0 12px #f199ca;
+}
+
+#border {
+  width: 650px;
+  height: 650px;
+  margin: 0 auto;
+  margin-top:40px;
+  border: 3px solid #93c3fe;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+}
+
+.logo {
+  font-family: "Righteous";
+  font-style: normal;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: -20px;
+  /* text-align: center;/ */
+  display: block;
+  font-size: 50px;
+  display: fle;
+  justify-content: center;
+  align-items: center;
+}
+#text {
+  color: #fefcfe;
+  left: 22%;
+  position: absolute;
+  text-shadow: 2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f,
+    0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f,
+    1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f;
+  
+}
+.logo i {
+  font-size: 55px;
+  position: absolute;
+  left: 12%;
+  transform: translateY(8px);
+  /* display: block; */
+  color: #f9c0cc;
+}
+#username {
+  width: 350px;
+  border-radius: 10px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  color:  #fefcfe;
+  border: 3px solid #93c3fe;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+}
+
+#password {
+  border-radius: 10px;
+  width: 350px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  color:  #fefcfe;
+  border: 3px solid #93c3fe;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+}
+
+.form-group {
+  padding: 8px;
+  position: relative;
+}
+
+form {
+  margin: -70px 0 0 0;
+  position: relative;
+}
+
+#btnPassword {
+  color: white;
+  left: 85%;
+  top: 30%;
+  position: absolute;
+  font-size: 25px;
+  opacity: 0.3;
+}
+#btnPassword:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+#start {
+  position:absolute;
+  border-radius: 50px;
+  color: white;
+  font-family: "Kanit";
+  font-size: 18px;
+  font-weight: bold;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0);
+  top: 105%;
+  left: 1%;
+  right: 0;
+  border: 3px solid #d77e91;
+  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2, 0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2, inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+}
+#setting {
+  position:absolute;
+  border-radius: 50px;
+  color: white;
+  font-family: "Kanit";
+  font-size: 18px;
+  font-weight: bold;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0);
+  top: 105%;
+  left: 54%;
+  right: 0;
+  border: 3px solid #d77e91;
+  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2, 0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2, inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+}
+
+#start:hover {
+  background-color: rgba(215, 70, 70, 0.365);
+}
+#setting:hover {
+  background-color: rgba(215, 70, 70, 0.365);
+}
+
+#setting-pop-up {
+    position: absolute;
+    background-color:rgb(245, 164, 164);
+    width: 600px;
+    height: 300px;  
+    left: 0;
+    right: 0;
+    top: 51%;
+    margin: 0 auto;
+    display: none;
+    animation-name: float;
+    animation-duration: 1s;
+}
+
+#blurBackground {
+    background-color: rgba(0, 0, 0, 0);
+    /* display: none; */
+}
+
+@keyframes float {
+    0% {width: 600px; height:50px ;top: 86%}
+}
