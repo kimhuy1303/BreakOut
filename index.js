@@ -1,7 +1,7 @@
 var canvas = document.getElementById("myCanvas");
-var stopBtn = document.getElementById("stop");
-var contBtn = document.getElementById("cont");
-var startBtn = document.getElementById("start");
+var stopaddBtn = document.getElementById("stop");
+var contaddBtn = document.getElementById("cont");
+var startaddBtn = document.getElementById("start");
 var pauseGame = document.getElementById("pauseGame");
 var menuStart = document.getElementById("menu-start-game");
 var border = document.getElementById("border");
@@ -53,8 +53,9 @@ createBricks();
 //function:
 document.addEventListener("keydown", keyDownHandle, false);
 document.addEventListener("keyup", keyUpHandle, false);
-document.addEventListener("keydown", pauseBtn, false);
+document.addEventListener("keydown", pauseaddBtn, false);
 document.addEventListener("keydown", pressStart, false);
+
 function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
     startGame = true;
@@ -122,7 +123,7 @@ function drawLives() {
   ctx.fillText("Lives: " + lives, 510, 20);
 }
 
-function pauseBtn(event) {
+function pauseaddBtn(event) {
   if (event.keyCode == 32 && play) {
     pause = !pause;
     console.log(pause);
@@ -197,7 +198,7 @@ function stop() {
 }
 function cont() {
   stopMove = false;
-  // contBtn.style.display="none";
+  // contaddBtn.style.display="none";
   dx = keepX;
   dy = keepY;
 }
@@ -303,7 +304,7 @@ function update() {
   levelUp();
 }
 function draw() {
-  startBtn.style.display = "none";
+  startaddBtn.style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawLevel();
@@ -325,4 +326,15 @@ function loop() {
   if (startGame) {
     moveBall();
   }
+}
+var popUp = document.querySelector("#setting-pop-up");
+// var menu = document.querySelector("#menu-start-game");
+var blur = document.querySelector("#blurBackground");
+var text = document.querySelector("#text");
+function settingPopUp(){
+  popUp.style.display ="block";
+  // menu.style.backgroundColor = rgba(0, 0, 0, 0.235);
+  blur.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  text.style.color = "#fefcfea2";
+  text.style.textShadow = "2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f, 0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f";
 }
