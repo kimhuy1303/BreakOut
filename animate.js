@@ -1,11 +1,14 @@
 var popUp = document.querySelector("#setting-pop-up");
-// var menu = document.querySelector("#menu-start-game");
-var blur = document.querySelector("#blurBackground");
+var logo = document.querySelector("#icon");
 var text = document.querySelector("#text");
+var blur = document.querySelector("#blurBackground");
+var username = document.querySelector("#username");
 function settingPopUp(){
-  popUp.style.display ="block";
-  // menu.style.backgroundColor = rgba(0, 0, 0, 0.235);
-  blur.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  text.style.color = "#fefcfea2";
-  text.style.textShadow = "2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f, 0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f";
+    // blur.style.alignItems = 'center';
+    popUp.style.display ="block";
+    text.style.color = "#6d6c6d";
+    logo.style.color = "#6d6c6d";
+    username.style.border = "3px solid #6d6c6d";
+    text.style.textShadow = "2px 0 0 #866a7058, -2px 0 0 #866a7058, 0 2px 0 #866a7058, 0 -2px 0 #866a7058, 1px 1px #866a7058, -1px -1px 0 #866a7058, 1px -1px 0 #866a7058, -1px 1px 0 #866a7058";
+    username.style.boxShadow = "2px 0 0 #6d6c6d, -2px 0 0 #6d6c6d, 0 2px 0 #6d6c6d, 0 -2px 0 #6d6c6d, 1px 1px #6d6c6d, -1px -1px 0 #6d6c6d, 1px -1px 0 #6d6c6d, -1px 1px 0 #6d6c6d";
 }

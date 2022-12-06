@@ -23,9 +23,6 @@ body {
   width: 600px;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 #menu-start-game {
@@ -59,7 +56,6 @@ body {
   width: 100%;
   height: 50px;
   margin-top: -20px;
-  /* text-align: center;/ */
   display: block;
   font-size: 50px;
   display: fle;
@@ -75,12 +71,11 @@ body {
     1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f;
   
 }
-.logo i {
+#icon {
   font-size: 55px;
   position: absolute;
   left: 12%;
   transform: translateY(8px);
-  /* display: block; */
   color: #f9c0cc;
 }
 #username {
@@ -166,23 +161,22 @@ form {
 
 #setting-pop-up {
     position: absolute;
-    background-color:rgb(245, 164, 164);
-    width: 600px;
+    background-color:#1a304b;
+    width: 450px;
     height: 300px;  
     left: 0;
     right: 0;
-    top: 51%;
+    top: 48%;
     margin: 0 auto;
     display: none;
     animation-name: float;
-    animation-duration: 1s;
+    animation-duration: 0.3s;
+    border: 7px solid #accef8;
+    box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
 
-#blurBackground {
-    background-color: rgba(0, 0, 0, 0);
-    /* display: none; */
-}
+
 
 @keyframes float {
-    0% {width: 600px; height:50px ;top: 86%}
+    0% {width: 450px; height:50px ;top: 86%}
 }
