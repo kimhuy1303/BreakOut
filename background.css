@@ -18,14 +18,10 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  /* bottom: 100px; */
   height: 600px;
   width: 600px;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 #menu-start-game {
@@ -40,16 +36,20 @@ body {
   height: 600px;
   box-sizing: border-box;
   border: 3px solid #e83a91;
-  box-shadow: 0 0 1px #f199ca, 0 0 2px #f199ca, 0 0 6px #f199ca, 0 0 12px #f199ca, inset 0 0 1px #f199ca, inset 0 0 2px #f199ca, inset 0 0 6px #f199ca, inset 0 0 12px #f199ca;
+  box-shadow: 0 0 1px #f199ca, 0 0 2px #f199ca, 0 0 6px #f199ca,
+    0 0 12px #f199ca, inset 0 0 1px #f199ca, inset 0 0 2px #f199ca,
+    inset 0 0 6px #f199ca, inset 0 0 12px #f199ca;
 }
 
 #border {
   width: 650px;
   height: 650px;
   margin: 0 auto;
-  margin-top:40px;
+  margin-top: 40px;
   border: 3px solid #93c3fe;
-  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,
+    0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
+    inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
 
 .logo {
@@ -71,40 +71,60 @@ body {
   left: 22%;
   position: absolute;
   text-shadow: 2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f,
-    0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f,
-    1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f;
-  
+    0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f,
+    -1px 1px 0 #e02a4f;
 }
 .logo i {
   font-size: 55px;
   position: absolute;
   left: 12%;
   transform: translateY(8px);
-  /* display: block; */
   color: #f9c0cc;
 }
+
+#username,
+#password {
+  font-weight: 600;
+}
+
 #username {
   width: 350px;
   border-radius: 10px;
+  font-size: 1.9rem;
   height: 50px;
   background-color: rgba(255, 255, 255, 0);
-  color:  #fefcfe;
+  color: rgb(245, 164, 164);
   border: 3px solid #93c3fe;
-  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,
+    0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
+    inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
 
 #password {
+  color: rgb(245, 164, 164);
   border-radius: 10px;
   width: 350px;
+  font-size: 1.9rem;
   height: 50px;
   background-color: rgba(255, 255, 255, 0);
-  color:  #fefcfe;
   border: 3px solid #93c3fe;
-  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,
+    0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
+    inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+}
+
+#password::placeholder,
+#username::placeholder {
+  color: rgb(245, 164, 164);
+}
+#password:focus::placeholder,
+#username:focus::placeholder {
+  color: rgb(245, 164, 164);
+  opacity: 0.4;
 }
 
 .form-group {
-  padding: 8px;
+  padding: 10px;
   position: relative;
 }
 
@@ -113,7 +133,8 @@ form {
   position: relative;
 }
 
-#btnPassword {
+.ph-eye-slash,
+.ph-eye {
   color: white;
   left: 85%;
   top: 30%;
@@ -121,13 +142,14 @@ form {
   font-size: 25px;
   opacity: 0.3;
 }
-#btnPassword:hover{
+.ph-eye-slash:hover,
+.ph-eye:hover {
   cursor: pointer;
   opacity: 1;
 }
 
 #start {
-  position:absolute;
+  position: absolute;
   border-radius: 50px;
   color: white;
   font-family: "Kanit";
@@ -139,10 +161,12 @@ form {
   left: 1%;
   right: 0;
   border: 3px solid #d77e91;
-  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2, 0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2, inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
+    0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
+    inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
 }
 #setting {
-  position:absolute;
+  position: absolute;
   border-radius: 50px;
   color: white;
   font-family: "Kanit";
@@ -154,7 +178,9 @@ form {
   left: 54%;
   right: 0;
   border: 3px solid #d77e91;
-  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2, 0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2, inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
+    0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
+    inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
 }
 
 #start:hover {
@@ -165,24 +191,28 @@ form {
 }
 
 #setting-pop-up {
-    position: absolute;
-    background-color:rgb(245, 164, 164);
-    width: 600px;
-    height: 300px;  
-    left: 0;
-    right: 0;
-    top: 51%;
-    margin: 0 auto;
-    display: none;
-    animation-name: float;
-    animation-duration: 1s;
+  position: absolute;
+  background-color: rgb(245, 164, 164);
+  width: 600px;
+  height: 300px;
+  left: 0;
+  right: 0;
+  top: 51%;
+  margin: 0 auto;
+  display: none;
+  animation-name: float;
+  animation-duration: 1s;
 }
 
 #blurBackground {
-    background-color: rgba(0, 0, 0, 0);
-    /* display: none; */
+  background-color: rgba(0, 0, 0, 0);
+  /* display: none; */
 }
 
 @keyframes float {
-    0% {width: 600px; height:50px ;top: 86%}
+  0% {
+    width: 600px;
+    height: 50px;
+    top: 86%;
+  }
 }
