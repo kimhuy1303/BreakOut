@@ -67,7 +67,7 @@ body {
 }
 #text {
   color: #fefcfe;
-  left: 22%;
+  left: 22.5%;
   position: absolute;
   text-shadow: 2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f,
     0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f,
@@ -147,62 +147,224 @@ form {
   opacity: 1;
 }
 
+.game {
+  font-size: 35px;
+  padding-top: 2px;
+}
+.setting {
+  font-size: 35px;
+  padding-top: 2px;
+}
+
 #start {
+  display: flex;
   position: absolute;
+  text-align: center;
   border-radius: 50px;
-  color: white;
-  font-family: "Kanit";
-  font-size: 18px;
-  font-weight: bold;
+  color: #f994aa;
+  font-family: "Rightenous";
+  font-size: 19px;
+  margin-top: 0 auto;
+  font-weight: bolder;
   width: 45%;
   background-color: rgba(255, 255, 255, 0);
   top: 105%;
   left: 1%;
   right: 0;
-  border: 3px solid #d77e91;
-  box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
-    0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
-    inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+  border: 3px solid #f35197;
+  justify-content: space-evenly;
+  box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
+    0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
+    inset 0 0 6px #a95072, inset 0 0 12px #a95072;
+}
+
+#start:hover {
+  background-color: #f35197;
+  color: black;
+  box-shadow: 0 0 10px #f35197, 0 0 30px #f35197, 0 0 50px #f35197;
+
+}
+#setting:hover {
+  background-color: #d0d77e;
+  color: black;
+  box-shadow: 0 0 10px #d0d77e, 0 0 30px #d0d77e, 0 0 50px #d0d77e;
+
+}
+
+#start-text {
+  padding:0 auto;
+  padding-top: 6px;
+}
+#setting-text {
+  padding:0 auto;
+  padding-top: 6px;
 }
 #setting {
+  justify-content: space-evenly;
+  display: flex;
   position: absolute;
   border-radius: 50px;
-  color: white;
-  font-family: "Kanit";
-  font-size: 18px;
-  font-weight: bold;
+  color: #d0d77e;
+  font-family: "Rightenous";
+  font-size: 19px;
+  font-weight: bolder;
   width: 45%;
   background-color: rgba(255, 255, 255, 0);
   top: 105%;
   left: 54%;
   right: 0;
-  border: 3px solid #d77e91;
+  border: 3px solid #d0d77e;
   box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
     0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
     inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
 }
 
-#start:hover {
-  background-color: rgba(215, 70, 70, 0.365);
+#setting-pop-up {
+  position: absolute;
+  background-color:#1a304b;
+  width: 450px;
+  height: 300px;  
+  left: 0;
+  right: 0;
+  top: 48%;
+  margin: 0 auto;
+  display: none;
+  animation-name: float;
+  animation-duration: 0.3s;
+  border: 7px solid #accef8;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
-#setting:hover {
-  background-color: rgba(215, 70, 70, 0.365);
+.music{
+  width: 200px;
+  margin-left: 20px;
+}
+.sound{
+  width: 200px;
+  margin-left: 20px;
+}
+#music {
+  margin: 20px 5px 0 20px;
+  font-size: 35px;
+  position: absolute;
+  color: #F2FAFF;
+}
+#sound {
+  margin: 80px 5px 0 20px;
+  font-size: 35px;
+  position: absolute;
+  color: #F2FAFF;
+}
+#music-text {
+  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
+  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
+  -1px 1px 0 #F2FAFF;
+  display: flex;
+  font-family: "Rightenous";
+  padding:0 auto;
+  margin: 21px 5px 0 70px;
+  color: #889ABC;
+  font-weight: bolder;
+  position: absolute;
+  justify-content: space-evenly;
+  font-size: 25px;
+}
+#sound-text {
+  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
+  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
+  -1px 1px 0 #F2FAFF;
+  display: flex;
+  font-family: "Rightenous";
+  padding:0 auto;
+  margin: 80px 5px 0 70px;
+  color: #889ABC;
+  font-weight: bolder;
+  position: absolute;
+  justify-content: space-evenly;
+  font-size: 25px;
+}
+.container {
+  position: absolute;
+  left: 77%;
+  top: 25px;
+}
+.container2 {
+  position: absolute;
+  left: 63.5%;
+  top: 80px;
 }
 
-#setting-pop-up {
-    position: absolute;
-    background-color:#1a304b;
-    width: 450px;
-    height: 300px;  
-    left: 0;
-    right: 0;
-    top: 48%;
-    margin: 0 auto;
-    display: none;
-    animation-name: float;
-    animation-duration: 0.3s;
-    border: 7px solid #accef8;
-    box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+.toggle {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 60px;
+  height: 26px;
+  background-color: #e83a91;
+  border-radius: 30px;
+}
+.toggle2 {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 60px;
+  height: 26px;
+  background-color: #e83a91;
+  border-radius: 30px;
+}
+.on {
+  background-color: rgb(75, 210, 161);
+}
+.on2 {
+  background-color: rgb(75, 210, 161);
+}
+.button {
+  position: absolute;
+  top: 1.7px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button2 {
+  position: absolute;
+  top: 1.7px;
+  left: 2.4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonOn {
+  left: 35.5px;
+}
+.buttonOn2 {
+  left: 35.7px;
+}
+
+.text-button {
+  position: absolute;
+  line-height: -3px;
+  color: #889ABC;
+  font-size: 18px;
+  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
+  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
+  -1px 1px 0 #F2FAFF;
+}
+.text-button2 {
+  position: absolute;
+  margin-left: 72px;
+  line-height: -3px;
+  color: #889ABC;;
+  font-size: 18px;
+  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
+  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
+  -1px 1px 0 #F2FAFF;
 }
 
 
