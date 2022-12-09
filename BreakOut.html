@@ -54,12 +54,17 @@ rel="stylesheet"
 
                     </div>
                     <p id="alert"></p>
+<<<<<<< HEAD
                     <button onclick="loop()" id="start" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon><p id="start-text">LOG IN</p></button>
+=======
+                    <button  id="login" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon>
+                        <p id="login-text">LOGIN</p></button>
+>>>>>>> 727f57064c1ade4ee2b3521857ba6fa287b5a102
                     <button id="setting" type="button" class="btn btn-default" onclick="settingPopUp()">
                         <ion-icon class="setting" name="settings-outline"></ion-icon>
                         <p id="setting-text">SETTING</p>
                     </button>
-                    <button id="guest" type = "button">
+                    <button onclick="loop()" class="start" id="guest" type = "button">
                         <ion-icon class="guest" name="person"></ion-icon>
                         <p id="guest-text">GUEST</p>
                     </button>
@@ -89,7 +94,13 @@ rel="stylesheet"
             </div>
         </div>
     </div>
-    <div id="pauseGame"></div>
+    <div id="pauseGame">
+        <div id ="popup">
+            <h2><center> PRESS SPACE TO CONTINUE</center></h2>
+            <button id="muteBtn"> Tắt âm</button>
+            <button id="unmuteBtn" style="display:none" > Bật âm</button>
+        </div>
+    </div>
 
 
     <canvas id="myCanvas" width="600" height="600"></canvas>

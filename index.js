@@ -1,9 +1,11 @@
 var canvas = document.getElementById("myCanvas");
 var stopBtn = document.getElementById("stop");
 var contBtn = document.getElementById("cont");
-var startBtn = document.getElementById("start");
+var startBtn = document.getElementsByClassName("start");
 var pauseGame = document.getElementById("pauseGame");
 var menuStart = document.getElementById("menu-start-game");
+var muteBtn = document.getElementById("muteBtn");
+var unmuteBtn = document.getElementById("unmuteBtn");
 var border = document.getElementById("border");
 var ctx = canvas.getContext("2d");
 var ballRadius = 8;
@@ -22,6 +24,8 @@ var x = canvas.width / 2;
 var y = paddleY - ballRadius;
 var rightPressed = false;
 var leftPressed = false;
+//audio:
+var muted = false;
 //score:
 var score = 0;
 //lives:
@@ -29,7 +33,7 @@ var lives = 3;
 //levels:
 var levels = 1;
 var passedLevel = false;
-var maxLevel = 5;
+var maxLevel = 3;
 var gameOver = false;
 var brick = {
   col: 9,
@@ -76,9 +80,25 @@ document.addEventListener("keydown", keyDownHandle, false);
 document.addEventListener("keyup", keyUpHandle, false);
 document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
+muteBtn.addEventListener("click", onOffMusic);
+unmuteBtn.addEventListener("click", onOffMusic);
+//AUDIO MUTED/UNMUTED:
+function onOffMusic(){
+  muted = !muted;
+  if(muted){
+    muteBtn.style.display = "none";
+    unmuteBtn.style.display = "block";
+  }
+  else if(!muted){
+    muteBtn.style.display = "block";
+    unmuteBtn.style.display = "none";
+  }
+}
 function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
     startGame = true;
+    // hitBounds.muted();
+  if(!muted) hitBounds.play();
   }
 }
 function drawBall() {
@@ -193,8 +213,7 @@ function collisionDetection() {
         ) {
           dy = -dy;
           b.status = !b.status;
-          // hitBounds.ended();
-          hitBounds.play();
+          if(!muted) hitBounds.play();
           score++;
         }
       }
@@ -247,16 +266,16 @@ function resetBall() {
 function ball_wall() {
   if (x + dx > canvas.width - ballRadius || x - ballRadius < 0) {
     dx = -dx;
-    hitWalls.play();
+    if(!muted) hitWalls.play();
   }
   if (y - ballRadius < 0) {
     dy = -dy;
-    hitWalls.play();
+    if(!muted) hitWalls.play();
   }
   if (y + ballRadius > canvas.height) {
     lives--;
     startGame = false;
-    lostLife.play();
+    if(!muted) lostLife.play();
     if (lives <= 0) {
       alert("GAME OVER");
       gameOver = true;
@@ -279,7 +298,7 @@ function handleBall() {
     let angle = collisionPoint * (Math.PI / 3);
     dx = ballSpeed * Math.sin(angle);
     dy = -ballSpeed * Math.cos(angle);
-    hitPaddle.play();
+    if(!muted) hitPaddle.play();
 
   }
 }
@@ -293,7 +312,7 @@ function levelUp() {
   if (isLevelDone) {
     if (levels >= maxLevel) {
       gameOver = true;
-      win.play();
+      if(!muted) win.play();
       alert("Thắng rồi chơi gì nữa?");
       location.reload();
       return;
@@ -302,7 +321,7 @@ function levelUp() {
     createBricks();
     resetBall();
     levels++;
-    win.play();
+    if(!muted) win.play();
     startGame = false;
   }
 }
@@ -320,7 +339,6 @@ function update() {
   levelUp();
 }
 function draw() {
-  startBtn.style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawLevel();
