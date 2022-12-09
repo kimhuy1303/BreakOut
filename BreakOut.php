@@ -16,7 +16,7 @@ rel="stylesheet"
 />
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/phosphor-icons"></script>
-<title>Game Break Wall</title>
+<title>BRICK BREAKER</title>
 
 </head>
 <body>

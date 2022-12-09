@@ -65,9 +65,9 @@ rel="stylesheet"
                     <button  id="login" type="button" class="btn btn-default"><ion-icon class="game" name="rocket"></ion-icon>
                         <p id="login-text">SIGN UP</p>
                     </button>
-                    <div></div>
                 </form>
             </div>
+            <div id="signup">Already Play BRICK BREAKER? <a href="./BreakOut.php">LOGIN</a></div>
         </div>
     </div>
 </body>

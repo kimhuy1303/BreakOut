@@ -181,16 +181,6 @@
     font-size: 35px;
     padding-top: 2px;
   }
-  .setting {
-    font-size: 35px;
-    padding-top: 2px;
-  }
-  .guest {
-    font-size: 24px;
-    padding-top: 5px;
-    padding-left: 15px;
-  }
-  
   #login {
     display: flex;
     position: absolute;
@@ -201,7 +191,7 @@
     font-size: 19px;
     margin-top: 0 auto;
     font-weight: bolder;
-    width: 40%;
+    width: 45%;
     background-color: rgba(255, 255, 255, 0);
     top: 105%;
     left: 30%; 
@@ -218,295 +208,26 @@
     color: black;
     box-shadow: 0 0 10px #f35197, 0 0 30px #f35197, 0 0 50px #f35197;
   }
-  #setting:hover {
-    background-color: #d0d77e;
-    color: black;
-    box-shadow: 0 0 10px #d0d77e, 0 0 30px #d0d77e, 0 0 50px #d0d77e;
-  }
-  #guest:hover {
-    background-color: #32b983;
-    color: black;
-    box-shadow: 0 0 10px #0f4831, 0 0 30px #0f4831, 0 0 50px #0f4831;
-  }
   
   #login-text {
     padding:0 auto;
     padding-top: 6px;
   }
-  #setting-text {
-    padding:0 auto;
-    padding-top: 6px;
-  }
-  #guest-text {
-    padding:0 auto;
-    padding-top: 4px;
-    font-size: 20px;
-    padding-right: 15px;
-  }
-  #setting {
-    justify-content: space-evenly;
-    display: flex;
-    position: absolute;
-    border-radius: 50px;
-    color: #d0d77e;
-    font-family: "Rightenous";
-    font-size: 19px;
-    font-weight: bolder;
-    width: 45%;
-    background-color: rgba(255, 255, 255, 0);
-    top: 105%;
-    left: 54%;
-    right: 0;
-    border: 3px solid #d0d77e;
-    box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
-      0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
-      inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
-  }
-  #guest {
-    justify-content: space-evenly;
-    display: flex;
-    position: absolute;
-    border-radius: 50px;
-    color: #32b983;
-    font-family: "Rightenous";
-    font-weight: bolder;
-    width: 45%;
-    background-color: rgb(8, 46, 30);
-    top: 163%;
-    left: 26%;
-    right: 0;
-    height: 40px;
-    border: 3px solid #32b983;
-    box-shadow: 0 0 1px #32b983, 0 0 2px #32b983, 0 0 6px #32b983,
-      0 0 12px #32b983, inset 0 0 1px #32b983, inset 0 0 2px #32b983,
-      inset 0 0 6px #32b983, inset 0 0 12px #32b983;
-  }
-  
-  #setting-pop-up {
-    position: absolute;
-    background-color:#1a304b;
-    width: 450px;
-    height: 300px;  
-    left: 0;
-    right: 0;
-    top: 48%;
+
+  #signup {
     margin: 0 auto;
-    display: none;
-    animation-name: float;
-    animation-duration: 1.3s;
-    border: 7px solid #accef8;
-    box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
-  }
-  
-  @keyframes float {
-    0% {position: absolute; width: 450px; height: 90px; top: 1%; left: 0; right: 0; margin: 0 auto;}
-  }
-  
-  .music{
-    width: 200px;
-    margin-left: 20px;
-  }
-  .sound{
-    width: 200px;
-    margin-left: 20px;
-  }
-  #music {
-    margin: 20px 5px 0 20px;
-    font-size: 35px;
     position: absolute;
-    color: #F2FAFF;
+    top: 20%; 
+    left: 42%;
+    color: #93c3fe;
   }
-  #sound {
-    margin: 80px 5px 0 20px;
-    font-size: 35px;
-    position: absolute;
-    color: #F2FAFF;
-  }
-  #music-text {
-    text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-    0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-    -1px 1px 0 #F2FAFF;
-    display: flex;
-    font-family: "Rightenous";
-    padding:0 auto;
-    margin: 21px 5px 0 70px;
-    color: #889ABC;
-    font-weight: bolder;
-    position: absolute;
-    justify-content: space-evenly;
-    font-size: 25px;
-  }
-  #sound-text {
-    text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-    0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-    -1px 1px 0 #F2FAFF;
-    display: flex;
-    font-family: "Rightenous";
-    padding:0 auto;
-    margin: 80px 5px 0 70px;
-    color: #889ABC;
-    font-weight: bolder;
-    position: absolute;
-    justify-content: space-evenly;
-    font-size: 25px;
-  }
-  .container {
-    position: absolute;
-    left: 63.5%;
-    top: 25px;
-    width: 60px;
-    height: 26px;
-  }
-  .container2 {
-    position: absolute;
-    left: 63.5%;
-    top: 80px;
-    width: 60px;
-    height: 26px;
-  }
-  
-  .toggle {
-    position: absolute;
-    top: 0;
-    left: -5%;
-    width: 60px;
-    height: 26px;
-    background-color: rgb(75, 210, 161);
-    border-radius: 30px;
-  }
-  .toggle2 {
-    position: absolute;
-    top: 0;
-    left: -5%;
-    width: 60px;
-    height: 26px;
-    background-color: rgb(75, 210, 161);
-    border-radius: 30px;
-  }
-  .off {
-    background-color: #e83a91;
-    position: absolute;
-    top: 0;
-    left: -5%;
-    width: 60px;
-    height: 26px;
-  }
-  .off2 {
-    background-color: #e83a91;
-    top: 0;
-    left: -5%;
-    width: 60px;
-    height: 26px;
-  }
-  .button {
-    position: absolute;
-    top: 1.7px;
-    left: 2px;
-    width: 22px;
-    height: 22px;
-    border-radius: 30px;
-    background-color: white;
+
+  a {
     cursor: pointer;
-    transition: 0.3s;
+    color: #f35197;
   }
-  .button2 {
-    position: absolute;
-    top: 1.7px;
-    left: 2.4px;
-    width: 22px;
-    height: 22px;
-    border-radius: 30px;
-    background-color: white;
+  a:hover {
     cursor: pointer;
-    transition: 0.3s;
+    color: #f35197;
   }
-  
-  .buttonOn {
-    left: 35.5px;
-  }
-  .buttonOn2 {
-    left: 35.7px;
-  }
-  
-  .text-button {
-    margin-left: 60px;
-    position: absolute;
-    line-height: -3px;
-    color: #889ABC;
-    font-size: 18px;
-    text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-    0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-    -1px 1px 0 #F2FAFF;
-  }
-  .text-button2 {
-    position: absolute;
-    margin-left: 72px;
-    line-height: -3px;
-    color: #889ABC;;
-    font-size: 18px;
-    text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-    0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-    -1px 1px 0 #F2FAFF;
-  }
-  
-  
-  
-  .exit {
-    color: #ffdfed;
-    background:#1a304b;
-    width: 90px;
-    height: 35px;
-    position: absolute;
-    top: 82%;
-    left: 25%;
-    border: 3px solid #f35197;
-    border-radius: 30px;
-    box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
-      0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
-      inset 0 0 6px #a95072, inset 0 0 12px #a95072;
-  }
-  .save {
-    background: #1a304b;
-    width: 90px;
-    height: 35px;
-    position: absolute;
-    top: 82%;
-    left: 54%;
-    color: white;
-    border: 3px solid rgb(75, 181, 210);
-    border-radius: 30px;
-    box-shadow: 0 0 1px rgb(75, 181, 210), 0 0 2px rgb(75, 181, 210), 0 0 6px rgb(75, 181, 210),
-      0 0 12px rgb(75, 181, 210), inset 0 0 1px rgb(75, 181, 210), inset 0 0 2px rgb(75, 181, 210),
-      inset 0 0 6px rgb(75, 181, 210), inset 0 0 12px rgb(75, 181, 210);
-  }
-  
-  #exit-text {
-    padding-top: 1%;
-    text-align: center;
-    font-size: 19px;
-    font-weight: bold;
-    font-family: "Rightenous";
-  }
-  #save-text {
-    padding-bottom: 3%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 3px;
-    font-family: "Rightenous";
-  }
-  
-  .exit:hover {
-    background-color: #f35184;
-    box-shadow: 0 0 10px #f35184, 0 0 30px #f35184, 0 0 30px #f35184;
-    color: black;
-    cursor: pointer;
-  }
-  .save:hover {
-    background-color: rgb(75, 181, 210);
-    box-shadow: 0 0 10px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210);
-    color: black;
-    cursor: pointer;
-  }
-  
-  
+
