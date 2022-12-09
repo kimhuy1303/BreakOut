@@ -39,18 +39,18 @@ var brick = {
   setTop: 50,
   setLeft: 35,
 };
-if(levels == 1){
-  brick.row=3;
+if (levels == 1) {
+  brick.row = 3;
 }
-if(levels == 2){
-  brick.row= 4;
+if (levels == 2) {
+  brick.row = 4;
 }
-if(levels == 3){
+if (levels == 3) {
   brick.row = 5;
 }
 var bricks = [];
 function createBricks() {
-  for (var c = 0; c < brick.col; c++) { 
+  for (var c = 0; c < brick.col; c++) {
     bricks[c] = [];
     for (var r = 0; r < brick.row; r++) {
       bricks[c][r] = { x: 0, y: 0, status: true };
@@ -60,11 +60,11 @@ function createBricks() {
 createBricks();
 //audio :
 var hitPaddle = new Audio();
-hitPaddle.src ="audio/sounds_hitpaddle.wav";
+hitPaddle.src = "audio/sounds_hitpaddle.wav";
 var hitBounds = new Audio();
-hitBounds.src ="audio/sounds_hitbounds.wav";
+hitBounds.src = "audio/sounds_hitbounds.wav";
 var hitWalls = new Audio();
-hitWalls.src ="audio/sounds_hitbounds.wav";
+hitWalls.src = "audio/sounds_hitbounds.wav";
 var win = new Audio();
 win.src = "audio/sounds_wingame.wav";
 var lostLife = new Audio();
@@ -280,7 +280,6 @@ function handleBall() {
     dx = ballSpeed * Math.sin(angle);
     dy = -ballSpeed * Math.cos(angle);
     hitPaddle.play();
-
   }
 }
 function levelUp() {
