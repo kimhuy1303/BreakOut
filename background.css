@@ -332,7 +332,7 @@ form {
   left: -5%;
   width: 60px;
   height: 26px;
-  background-color: #e83a91;
+  background-color: rgb(75, 210, 161);
   border-radius: 30px;
 }
 .toggle2 {
@@ -341,14 +341,14 @@ form {
   left: -5%;
   width: 60px;
   height: 26px;
-  background-color: #e83a91;
+  background-color: rgb(75, 210, 161);
   border-radius: 30px;
 }
-.on {
-  background-color: rgb(75, 210, 161);
+.off {
+  background-color: #e83a91;
 }
-.on2 {
-  background-color: rgb(75, 210, 161);
+.off2 {
+  background-color: #e83a91;
 }
 .button {
   position: absolute;
@@ -400,8 +400,71 @@ form {
   -1px 1px 0 #F2FAFF;
 }
 
-
-
+.exit {
+  display: none;
+}
+.save {
+  display: none;
+}
 @keyframes float {
     0% {width: 450px; height:50px ;top: 86%}
 }
+
+.exit {
+  color: #ffdfed;
+  background:#1a304b;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  top: 82%;
+  left: 25%;
+  border: 3px solid #f35197;
+  border-radius: 30px;
+  box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
+    0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
+    inset 0 0 6px #a95072, inset 0 0 12px #a95072;
+}
+.save {
+  background: #1a304b;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  top: 82%;
+  left: 54%;
+  color: white;
+  border: 3px solid rgb(75, 181, 210);
+  border-radius: 30px;
+  box-shadow: 0 0 1px rgb(75, 181, 210), 0 0 2px rgb(75, 181, 210), 0 0 6px rgb(75, 181, 210),
+    0 0 12px rgb(75, 181, 210), inset 0 0 1px rgb(75, 181, 210), inset 0 0 2px rgb(75, 181, 210),
+    inset 0 0 6px rgb(75, 181, 210), inset 0 0 12px rgb(75, 181, 210);
+}
+
+#exit-text {
+  padding-top: 1%;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "Rightenous";
+}
+#save-text {
+  padding-bottom: 3%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 3px;
+  font-family: "Rightenous";
+}
+
+.exit:hover {
+  background-color: #f35184;
+  box-shadow: 0 0 10px #f35184, 0 0 30px #f35184, 0 0 30px #f35184;
+  color: black;
+  cursor: pointer;
+}
+.save:hover {
+  background-color: rgb(75, 181, 210);
+  box-shadow: 0 0 10px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210);
+  color: black;
+  cursor: pointer;
+}
+
