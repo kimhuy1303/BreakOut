@@ -155,6 +155,11 @@ form {
   font-size: 35px;
   padding-top: 2px;
 }
+.guest {
+  font-size: 24px;
+  padding-top: 5px;
+  padding-left: 15px;
+}
 
 #start {
   display: flex;
@@ -182,13 +187,16 @@ form {
   background-color: #f35197;
   color: black;
   box-shadow: 0 0 10px #f35197, 0 0 30px #f35197, 0 0 50px #f35197;
-
 }
 #setting:hover {
   background-color: #d0d77e;
   color: black;
   box-shadow: 0 0 10px #d0d77e, 0 0 30px #d0d77e, 0 0 50px #d0d77e;
-
+}
+#guest:hover {
+  background-color: #32b983;
+  color: black;
+  box-shadow: 0 0 10px #0f4831, 0 0 30px #0f4831, 0 0 50px #0f4831;
 }
 
 #start-text {
@@ -198,6 +206,12 @@ form {
 #setting-text {
   padding:0 auto;
   padding-top: 6px;
+}
+#guest-text {
+  padding:0 auto;
+  padding-top: 4px;
+  font-size: 20px;
+  padding-right: 15px;
 }
 #setting {
   justify-content: space-evenly;
@@ -217,6 +231,25 @@ form {
   box-shadow: 0 0 1px #f3aeb2, 0 0 2px #f3aeb2, 0 0 6px #f3aeb2,
     0 0 12px #f3aeb2, inset 0 0 1px #f3aeb2, inset 0 0 2px #f3aeb2,
     inset 0 0 6px #f3aeb2, inset 0 0 12px #f3aeb2;
+}
+#guest {
+  justify-content: space-evenly;
+  display: flex;
+  position: absolute;
+  border-radius: 50px;
+  color: #32b983;
+  font-family: "Rightenous";
+  font-weight: bolder;
+  width: 45%;
+  background-color: rgb(8, 46, 30);
+  top: 163%;
+  left: 26%;
+  right: 0;
+  height: 40px;
+  border: 3px solid #32b983;
+  box-shadow: 0 0 1px #32b983, 0 0 2px #32b983, 0 0 6px #32b983,
+    0 0 12px #32b983, inset 0 0 1px #32b983, inset 0 0 2px #32b983,
+    inset 0 0 6px #32b983, inset 0 0 12px #32b983;
 }
 
 #setting-pop-up {
