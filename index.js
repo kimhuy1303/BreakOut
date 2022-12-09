@@ -1,7 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 var stopBtn = document.getElementById("stop");
 var contBtn = document.getElementById("cont");
-var startBtn = document.getElementById("start");
+var startBtn = document.getElementsByClassName("start");
 var pauseGame = document.getElementById("pauseGame");
 var menuStart = document.getElementById("menu-start-game");
 var border = document.getElementById("border");
@@ -23,8 +23,7 @@ var y = paddleY - ballRadius;
 var rightPressed = false;
 var leftPressed = false;
 //audio:
-var muted = false;
-var unmuted = true;
+var muted = true;
 //score:
 var score = 0;
 //lives:
@@ -81,14 +80,15 @@ document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
 //AUDIO MUTED/UNMUTED:
 function onOffMusic(){
-  if(!muted && unmuted){
+  muted = !muted;
+  if(muted){
     hitPaddle.unmuted();
     hitBounds.unmuted();
     hitWalls.unmuted();
     lostLife.unmuted();
     lose.unmuted();
   }
-  if(muted && !unmuted ){
+  if(!muted){
     hitPaddle.muted();
     hitBounds.muted();
     hitWalls.muted();
@@ -340,7 +340,6 @@ function update() {
   levelUp();
 }
 function draw() {
-  startBtn.style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawLevel();
