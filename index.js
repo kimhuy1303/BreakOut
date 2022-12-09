@@ -64,11 +64,11 @@ function createBricks() {
 createBricks();
 //audio :
 var hitPaddle = new Audio();
-hitPaddle.src = "audio/sounds_hitpaddle.wav";
+hitPaddle.src = "audio/paddlehit.mp3";
 var hitBounds = new Audio();
-hitBounds.src = "audio/sounds_hitbounds.wav";
+hitBounds.src = "audio/hitbricks.mp3";
 var hitWalls = new Audio();
-hitWalls.src = "audio/sounds_hitbounds.wav";
+hitWalls.src = "audio/wall.mp3";
 var win = new Audio();
 win.src = "audio/sounds_wingame.wav";
 var lostLife = new Audio();
@@ -146,20 +146,30 @@ function drawBricks() {
     }
   }
 }
+
+const SCORE = new Image();
+SCORE.src = "images/score.png";
 function drawScore() {
-  ctx.font = "16px TimesNewRoman";
-  ctx.fillStyle = "darkblue";
-  ctx.fillText("Score: " + score, 30, 20);
+  ctx.font = "18px Righteous";
+  ctx.fillStyle = "#FFF";
+  ctx.fillText(score, 30, 20);
+  ctx.drawImage(SCORE, 45, 2, (width = 25), (height = 25));
 }
 function drawLevel() {
-  ctx.font = "16px TimesNewRoman";
+  const LEVEL = new Image();
+  LEVEL.src = "images/level-up.png";
+  ctx.font = "18px Righteous";
   ctx.fillStyle = "orange";
-  ctx.fillText("Level: " + levels, canvas.width / 2 - 20, 20);
+  ctx.fillText(levels, canvas.width / 2 - 20, 20);
+  ctx.drawImage(LEVEL, canvas.width / 2 - 10, 0, (width = 30), (height = 30));
 }
 function drawLives() {
-  ctx.font = "16px TimesNewRoman";
+  const LIFE = new Image();
+  LIFE.src = "images/heart.png";
+  ctx.font = "18px Righteous";
   ctx.fillStyle = "red";
-  ctx.fillText("Lives: " + lives, 510, 20);
+  ctx.fillText(lives, 510, 20);
+  ctx.drawImage(LIFE, 530, 0, (width = 30), (height = 30));
 }
 
 function pauseBtn(event) {
@@ -276,7 +286,7 @@ function ball_wall() {
     startGame = false;
     if (!muted) lostLife.play();
     if (lives <= 0) {
-      alert("GAME OVER");
+      alert("GAME OVER"); // Remake Game here
       gameOver = true;
       lose.play();
       document.location.reload();
@@ -311,7 +321,7 @@ function levelUp() {
     if (levels >= maxLevel) {
       gameOver = true;
       if (!muted) win.play();
-      alert("Thắng rồi chơi gì nữa?");
+      alert("Thắng rồi chơi gì nữa?"); // LeaderBoard here
       location.reload();
       return;
     }
@@ -319,6 +329,7 @@ function levelUp() {
     createBricks();
     resetBall();
     levels++;
+    ballSpeed += 0.5;
     if (!muted) win.play();
     startGame = false;
   }
