@@ -54,12 +54,13 @@ rel="stylesheet"
 
                     </div>
                     <p id="alert"></p>
-                    <button onclick="loop()" id="start" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon><p id="start-text">START</p></button>
+                    <button  id="login" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon>
+                        <p id="login-text">LOGIN</p></button>
                     <button id="setting" type="button" class="btn btn-default" onclick="settingPopUp()">
                         <ion-icon class="setting" name="settings-outline"></ion-icon>
                         <p id="setting-text">SETTING</p>
                     </button>
-                    <button id="guest" type = "button">
+                    <button onclick="loop()" class="start" id="guest" type = "button">
                         <ion-icon class="guest" name="person"></ion-icon>
                         <p id="guest-text">GUEST</p>
                     </button>
@@ -70,20 +71,32 @@ rel="stylesheet"
                         <div class="toggle">
                             <div class="button" onclick="onOffMusic()"></div>
                         </div>
-                        <div class="text-button">OFF</div>
+                        <div class="text-button">ON</div>
                     </div>
                     <div class="sound"><ion-icon name="musical-note-outline" id = "sound"></ion-icon><span id ="sound-text">SOUND</span></div>
                     <div class="container2">
                         <div class="toggle2">
                             <div class="button2" onclick="onOffSound()"></div>
                         </div>
-                        <div class="text-button2">OFF</div>
+                        <div class="text-button2">ON</div>
+                    </div>
+                    <div class="exit">
+                        <div id="exit-text">EXIT</div>
+                    </div>
+                    <div class="save">
+                        <div id ="save-text">SAVE</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="pauseGame"></div>
+    <div id="pauseGame">
+        <div id ="popup">
+            <h2><center> PRESS SPACE TO CONTINUE</center></h2>
+            <button id="muteBtn"> Tắt âm</button>
+            <button id="unmuteBtn" style="display:none" > Bật âm</button>
+        </div>
+    </div>
 
 
     <canvas id="myCanvas" width="600" height="600"></canvas>
