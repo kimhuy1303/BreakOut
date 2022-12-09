@@ -100,7 +100,7 @@ body {
 }
 
 #username,
-#password {
+#password, #repassword {
   font-weight: 600;
 }
 
@@ -129,13 +129,25 @@ body {
     0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
     inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
+#repassword {
+  color: white;
+  border-radius: 10px;
+  width: 350px;
+  font-size: 1.9rem;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 3px solid #93c3fe;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,
+    0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
+    inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+}
 
 #password::placeholder,
-#username::placeholder {
+#username::placeholder, #repassword::placeholder {
   color: rgb(188, 186, 186);
 }
 #password:focus::placeholder,
-#username:focus::placeholder {
+#username:focus::placeholder, #repassword:focus::placeholder {
   color: rgb(152, 152, 152);
   opacity: 0.4;
 }
@@ -189,10 +201,10 @@ form {
   font-size: 19px;
   margin-top: 0 auto;
   font-weight: bolder;
-  width: 45%;
+  width: 40%;
   background-color: rgba(255, 255, 255, 0);
   top: 105%;
-  left: 1%;
+  left: 30%; 
   right: 0;
   border: 3px solid #f35197;
   justify-content: space-evenly;
@@ -286,15 +298,9 @@ form {
   box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
 
-
 @keyframes float {
   0% {position: absolute; width: 450px; height: 90px; top: 1%; left: 0; right: 0; margin: 0 auto;}
 }
-
-/* @keyframes float2 {
-  from {width: 450px; height: 300px; top: 48%;}
-  to {width: 450px; height: 0; top: 1%;}
-} */
 
 .music{
   width: 200px;
