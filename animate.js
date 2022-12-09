@@ -6,21 +6,9 @@ var exit = document.querySelector(".exit");
 var save = document.querySelector(".save");
 function settingPopUp(){
     popUp.style.display ="block";
-    // save.style.display ="block";
-    // exit.style.display ="block";
-    text.style.color = "#6d6c6d";
-    logo.style.color = "#6d6c6d";
-    username.style.border = "3px solid #6d6c6d";
-    text.style.textShadow = "2px 0 0 #866a7058, -2px 0 0 #866a7058, 0 2px 0 #866a7058, 0 -2px 0 #866a7058, 1px 1px #866a7058, -1px -1px 0 #866a7058, 1px -1px 0 #866a7058, -1px 1px 0 #866a7058";
-    username.style.boxShadow = "2px 0 0 #6d6c6d, -2px 0 0 #6d6c6d, 0 2px 0 #6d6c6d, 0 -2px 0 #6d6c6d, 1px 1px #6d6c6d, -1px -1px 0 #6d6c6d, 1px -1px 0 #6d6c6d, -1px 1px 0 #6d6c6d";
 }
 exit.onclick = function() {
-    text.style.textShadow = "2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f, 0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f";
     popUp.style.display ="none";    
-    text.style.color = "#fefcfe";
-    logo.style.color = "#f9c0cc";    
-    username.style.border = "3px solid #93c3fe";
-    username.style.boxShadow = "0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,inset 0 0 6px #accef8, inset 0 0 12px #accef8";
 }
 //function on/off music
 var toggle = document.querySelector(".toggle");
