@@ -22,6 +22,9 @@ var x = canvas.width / 2;
 var y = paddleY - ballRadius;
 var rightPressed = false;
 var leftPressed = false;
+//audio:
+var muted = false;
+var unmuted = true;
 //score:
 var score = 0;
 //lives:
@@ -29,7 +32,7 @@ var lives = 3;
 //levels:
 var levels = 1;
 var passedLevel = false;
-var maxLevel = 5;
+var maxLevel = 3;
 var gameOver = false;
 var brick = {
   col: 9,
@@ -76,6 +79,23 @@ document.addEventListener("keydown", keyDownHandle, false);
 document.addEventListener("keyup", keyUpHandle, false);
 document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
+//AUDIO MUTED/UNMUTED:
+function onOffMusic(){
+  if(!muted && unmuted){
+    hitPaddle.unmuted();
+    hitBounds.unmuted();
+    hitWalls.unmuted();
+    lostLife.unmuted();
+    lose.unmuted();
+  }
+  if(muted && !unmuted ){
+    hitPaddle.muted();
+    hitBounds.muted();
+    hitWalls.muted();
+    lostLife.muted();
+    lose.muted();
+  }
+}
 function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
     startGame = true;
