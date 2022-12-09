@@ -17,7 +17,6 @@ rel="stylesheet"
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/phosphor-icons"></script>
 <title>BRICK BREAKER</title>
-
 </head>
 <body>
     <!-- pause -->
@@ -54,7 +53,8 @@ rel="stylesheet"
                     </div>
                     <p id="alert"></p>
                     <button  id="login" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon>
-                        <p id="login-text">LOGIN</p></button>
+                        <p id="login-text">LOGIN</p>
+                    </button>
                     <button id="setting" type="button" class="btn btn-default" onclick="settingPopUp()">
                         <ion-icon class="setting" name="settings-outline"></ion-icon>
                         <p id="setting-text">SETTING</p>
