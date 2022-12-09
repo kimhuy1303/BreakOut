@@ -1,14 +1,13 @@
 var popUp = document.querySelector("#setting-pop-up");
 var logo = document.querySelector("#icon");
 var text = document.querySelector("#text");
-var blur = document.querySelector("#blurBackground");
 var username = document.querySelector("#username");
 var exit = document.querySelector(".exit");
 var save = document.querySelector(".save");
 function settingPopUp(){
     popUp.style.display ="block";
-    save.style.display ="block";
-    exit.style.display ="block";
+    // save.style.display ="block";
+    // exit.style.display ="block";
     text.style.color = "#6d6c6d";
     logo.style.color = "#6d6c6d";
     username.style.border = "3px solid #6d6c6d";
@@ -18,6 +17,8 @@ function settingPopUp(){
 exit.onclick = function() {
     text.style.textShadow = "2px 0 0 #e02a4f, -2px 0 0 #e02a4f, 0 2px 0 #e02a4f, 0 -2px 0 #e02a4f, 1px 1px #e02a4f, -1px -1px 0 #e02a4f, 1px -1px 0 #e02a4f, -1px 1px 0 #e02a4f";
     popUp.style.display ="none";    
+    // popUp.style.animateName = "float2";
+    // popUp.style.animationDuration= "1.3a";
     text.style.color = "#fefcfe";
     logo.style.color = "#f9c0cc";    
     username.style.border = "3px solid #93c3fe";
