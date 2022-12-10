@@ -2,12 +2,12 @@ var popUp = document.querySelector("#setting-pop-up");
 var logo = document.querySelector("#icon");
 var text = document.querySelector("#text");
 var username = document.querySelector("#username");
-var exit = document.querySelector(".exit");
 var save = document.querySelector(".save");
+
 function settingPopUp(){
     popUp.style.display ="block";
 }
-exit.onclick = function() {
+save.onclick = function() {
     popUp.style.display ="none";    
 }
 //function on/off music

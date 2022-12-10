@@ -395,7 +395,7 @@ form {
 .button {
   position: absolute;
   top: 1.7px;
-  left: 2px;
+  left: 35.5px;
   width: 22px;
   height: 22px;
   border-radius: 30px;
@@ -406,7 +406,7 @@ form {
 .button2 {
   position: absolute;
   top: 1.7px;
-  left: 2.4px;
+  left: 35.7px;
   width: 22px;
   height: 22px;
   border-radius: 30px;
@@ -416,10 +416,10 @@ form {
 }
 
 .buttonOn {
-  left: 35.5px;
+  left: 2px;
 }
 .buttonOn2 {
-  left: 35.7px;
+  left: 2.4px;
 }
 
 .text-button {
@@ -445,27 +445,14 @@ form {
 
 
 
-.exit {
-  color: #ffdfed;
-  background:#1a304b;
-  width: 90px;
-  height: 35px;
-  position: absolute;
-  top: 82%;
-  left: 25%;
-  border: 3px solid #f35197;
-  border-radius: 30px;
-  box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
-    0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
-    inset 0 0 6px #a95072, inset 0 0 12px #a95072;
-}
+
 .save {
   background: #1a304b;
   width: 90px;
   height: 35px;
   position: absolute;
   top: 82%;
-  left: 54%;
+  left: 40%;
   color: white;
   border: 3px solid rgb(75, 181, 210);
   border-radius: 30px;
@@ -474,13 +461,6 @@ form {
     inset 0 0 6px rgb(75, 181, 210), inset 0 0 12px rgb(75, 181, 210);
 }
 
-#exit-text {
-  padding-top: 1%;
-  text-align: center;
-  font-size: 19px;
-  font-weight: bold;
-  font-family: "Rightenous";
-}
 #save-text {
   padding-bottom: 3%;
   text-align: center;
