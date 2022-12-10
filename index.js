@@ -7,6 +7,11 @@ var menuStart = document.getElementById("menu-start-game");
 var muteBtn = document.getElementById("muteBtn");
 var unmuteBtn = document.getElementById("unmuteBtn");
 var border = document.getElementById("border");
+//hide show:
+var hide = document.getElementById("hide");
+var show = document.getElementById("show");
+var pass = document.getElementById("password");
+//canvas
 var ctx = canvas.getContext("2d");
 var ballRadius = 8;
 var dx = 2 * (Math.random() * 2 - 1);
@@ -24,6 +29,8 @@ var x = canvas.width / 2;
 var y = paddleY - ballRadius;
 var rightPressed = false;
 var leftPressed = false;
+//hide/show:
+var hideBtn = true;
 //audio:
 var muted = false;
 //score:
@@ -82,6 +89,21 @@ document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
 muteBtn.addEventListener("click", onOffMusic);
 unmuteBtn.addEventListener("click", onOffMusic);
+//HIDE/SHOW:
+function hideShow(){
+  hideBtn = !hideBtn;
+  if(hideBtn){
+    hide.style.display= "block";
+    show.style.display= "none";
+    pass.type= "text";
+  }
+  else if(!hideBtn){
+    hide.style.display= "none";
+    show.style.display= "block";
+    pass.type= "password";
+
+  }
+}
 //AUDIO MUTED/UNMUTED:
 function onOffMusic(){
   muted = !muted;
