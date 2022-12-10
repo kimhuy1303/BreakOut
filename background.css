@@ -9,7 +9,7 @@ body {
   background-image: url(./images/background.jpg);
 }
 #myCanvas {
-  background-color: rgba(0, 0, 0, 0.5);   
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   margin: 0 auto;
   position: absolute;
@@ -18,7 +18,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: -1;
 }
-#popup{
+#popup {
   position: absolute;
   border: solid 2px #2a88e0;
   border-radius: 5px;
@@ -33,7 +33,7 @@ body {
 #pauseGame {
   position: absolute;
   left: 50%;
-  top:50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   /* margin: 0 auto;  */
   height: 600px;
@@ -76,7 +76,7 @@ body {
   position: relative;
   width: 100%;
   height: 50px;
-  margin-top: -87px;
+  margin-top: -20px;
   display: block;
   font-size: 50px;
   display: fle;
@@ -146,7 +146,7 @@ body {
 }
 
 form {
-  margin-top: -120px;
+  margin: -70px 0 0 0;
   position: relative;
 }
 
@@ -218,15 +218,15 @@ form {
 }
 
 #login-text {
-  padding:0 auto;
+  padding: 0 auto;
   padding-top: 6px;
 }
 #setting-text {
-  padding:0 auto;
+  padding: 0 auto;
   padding-top: 6px;
 }
 #guest-text {
-  padding:0 auto;
+  padding: 0 auto;
   padding-top: 4px;
   font-size: 20px;
   padding-right: 15px;
@@ -272,23 +272,32 @@ form {
 
 #setting-pop-up {
   position: absolute;
-  background-color:#1a304b;
+  background-color: #1a304b;
   width: 450px;
-  height: 300px;  
+  height: 300px;
   left: 0;
   right: 0;
   top: 48%;
   margin: 0 auto;
   display: none;
   animation-name: float;
-  animation-duration: 0.8s;
+  animation-duration: 1.3s;
   border: 7px solid #accef8;
-  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
+  box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8,
+    0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8,
+    inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
 
-
 @keyframes float {
-  0% {position: absolute; width: 450px; height: 90px; top: 1%; left: 0; right: 0; margin: 0 auto;}
+  0% {
+    position: absolute;
+    width: 450px;
+    height: 90px;
+    top: 1%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }
 
 /* @keyframes float2 {
@@ -296,11 +305,11 @@ form {
   to {width: 450px; height: 0; top: 1%;}
 } */
 
-.music{
+.music {
   width: 200px;
   margin-left: 20px;
 }
-.sound{
+.sound {
   width: 200px;
   margin-left: 20px;
 }
@@ -308,37 +317,37 @@ form {
   margin: 20px 5px 0 20px;
   font-size: 35px;
   position: absolute;
-  color: #F2FAFF;
+  color: #f2faff;
 }
 #sound {
   margin: 80px 5px 0 20px;
   font-size: 35px;
   position: absolute;
-  color: #F2FAFF;
+  color: #f2faff;
 }
 #music-text {
-  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-  -1px 1px 0 #F2FAFF;
+  text-shadow: 2px 0 0 #f2faff, -2px 0 0 #f2faff, 0 2px 0 #f2faff,
+    0 -2px 0 #f2faff, 1px 1px #f2faff, -1px -1px 0 #f2faff, 1px -1px 0 #f2faff,
+    -1px 1px 0 #f2faff;
   display: flex;
   font-family: "Rightenous";
-  padding:0 auto;
+  padding: 0 auto;
   margin: 21px 5px 0 70px;
-  color: #889ABC;
+  color: #889abc;
   font-weight: bolder;
   position: absolute;
   justify-content: space-evenly;
   font-size: 25px;
 }
 #sound-text {
-  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-  -1px 1px 0 #F2FAFF;
+  text-shadow: 2px 0 0 #f2faff, -2px 0 0 #f2faff, 0 2px 0 #f2faff,
+    0 -2px 0 #f2faff, 1px 1px #f2faff, -1px -1px 0 #f2faff, 1px -1px 0 #f2faff,
+    -1px 1px 0 #f2faff;
   display: flex;
   font-family: "Rightenous";
-  padding:0 auto;
+  padding: 0 auto;
   margin: 80px 5px 0 70px;
-  color: #889ABC;
+  color: #889abc;
   font-weight: bolder;
   position: absolute;
   justify-content: space-evenly;
@@ -426,28 +435,26 @@ form {
   margin-left: 60px;
   position: absolute;
   line-height: -3px;
-  color: #889ABC;
+  color: #889abc;
   font-size: 18px;
-  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-  -1px 1px 0 #F2FAFF;
+  text-shadow: 2px 0 0 #f2faff, -2px 0 0 #f2faff, 0 2px 0 #f2faff,
+    0 -2px 0 #f2faff, 1px 1px #f2faff, -1px -1px 0 #f2faff, 1px -1px 0 #f2faff,
+    -1px 1px 0 #f2faff;
 }
 .text-button2 {
   position: absolute;
   margin-left: 72px;
   line-height: -3px;
-  color: #889ABC;;
+  color: #889abc;
   font-size: 18px;
-  text-shadow: 2px 0 0 #F2FAFF, -2px 0 0 #F2FAFF, 0 2px 0 #F2FAFF,
-  0 -2px 0 #F2FAFF, 1px 1px #F2FAFF, -1px -1px 0 #F2FAFF, 1px -1px 0 #F2FAFF,
-  -1px 1px 0 #F2FAFF;
+  text-shadow: 2px 0 0 #f2faff, -2px 0 0 #f2faff, 0 2px 0 #f2faff,
+    0 -2px 0 #f2faff, 1px 1px #f2faff, -1px -1px 0 #f2faff, 1px -1px 0 #f2faff,
+    -1px 1px 0 #f2faff;
 }
-
-
 
 .exit {
   color: #ffdfed;
-  background:#1a304b;
+  background: #1a304b;
   width: 90px;
   height: 35px;
   position: absolute;
@@ -469,8 +476,9 @@ form {
   color: white;
   border: 3px solid rgb(75, 181, 210);
   border-radius: 30px;
-  box-shadow: 0 0 1px rgb(75, 181, 210), 0 0 2px rgb(75, 181, 210), 0 0 6px rgb(75, 181, 210),
-    0 0 12px rgb(75, 181, 210), inset 0 0 1px rgb(75, 181, 210), inset 0 0 2px rgb(75, 181, 210),
+  box-shadow: 0 0 1px rgb(75, 181, 210), 0 0 2px rgb(75, 181, 210),
+    0 0 6px rgb(75, 181, 210), 0 0 12px rgb(75, 181, 210),
+    inset 0 0 1px rgb(75, 181, 210), inset 0 0 2px rgb(75, 181, 210),
     inset 0 0 6px rgb(75, 181, 210), inset 0 0 12px rgb(75, 181, 210);
 }
 
@@ -498,8 +506,8 @@ form {
 }
 .save:hover {
   background-color: rgb(75, 181, 210);
-  box-shadow: 0 0 10px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210);
+  box-shadow: 0 0 10px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210),
+    0 0 30px rgb(75, 181, 210);
   color: black;
   cursor: pointer;
 }
-
