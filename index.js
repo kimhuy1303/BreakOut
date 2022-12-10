@@ -205,8 +205,8 @@ SCORE.src = "images/score.png";
 function drawScore() {
   ctx.font = "18px Righteous";
   ctx.fillStyle = "#FFF";
-  ctx.fillText(score, 30, 20);
-  ctx.drawImage(SCORE, 45, 2, (width = 25), (height = 25));
+  ctx.fillText(score, 60, 20);
+  ctx.drawImage(SCORE, 30, 2, (width = 25), (height = 25));
 }
 function drawLevel() {
   const LEVEL = new Image();
