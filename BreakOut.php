@@ -92,8 +92,12 @@ rel="stylesheet"
     <div id="pauseGame">
         <div id ="popup">
             <h2><center> PRESS SPACE TO CONTINUE</center></h2>
-            <button id="muteBtn"> Tắt âm</button>
-            <button id="unmuteBtn" style="display:none" > Bật âm</button>
+            <button id="muteSoundBtn"> MUTE Sound</button>
+            <button id="unmuteSoundBtn" style="display:none" >UNMUTE Sound</button>
+            
+            <button id="muteMusicBtn" style="display:block"> MUTE MUSIC</button>
+            <button id="unmuteMusicBtn" style="display:none" >UNMUTE MUSIC</button>
+            
         </div>
     </div>
 

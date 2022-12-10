@@ -4,8 +4,15 @@ var contBtn = document.getElementById("cont");
 var startBtn = document.getElementsByClassName("start");
 var pauseGame = document.getElementById("pauseGame");
 var menuStart = document.getElementById("menu-start-game");
-var muteBtn = document.getElementById("muteBtn");
-var unmuteBtn = document.getElementById("unmuteBtn");
+//btn mute sound:
+var muteSoundBtn = document.getElementById("muteSoundBtn");
+var unmuteSoundBtn = document.getElementById("unmuteSoundBtn");
+//btn mute music:
+var muteMusicBtn = document.getElementById("muteMusicBtn");
+var unmuteMusicBtn = document.getElementById("unmuteMusicBtn");
+
+var soundBtnsetting = document.querySelector(".button2");
+soundBtnsetting.addEventListener("click", onOffMusic); 
 var border = document.getElementById("border");
 //hide show:
 var hide = document.getElementById("hide");
@@ -33,6 +40,7 @@ var leftPressed = false;
 var hideBtn = true;
 //audio:
 var muted = false;
+var music = true;
 //score:
 var score = 0;
 //lives:
@@ -82,13 +90,18 @@ var lostLife = new Audio();
 lostLife.src = "audio/sounds_lostlife.wav";
 var lose = new Audio();
 lose.src = "audio/sounds_gameover.wav";
+var nhacnen = new Audio();
+nhacnen.src = "audio/nhacnen.mp3";
 //function:
 document.addEventListener("keydown", keyDownHandle, false);
 document.addEventListener("keyup", keyUpHandle, false);
 document.addEventListener("keydown", pauseBtn, false);
 document.addEventListener("keydown", pressStart, false);
-muteBtn.addEventListener("click", onOffMusic);
-unmuteBtn.addEventListener("click", onOffMusic);
+muteSoundBtn.addEventListener("click", onOffSound);
+unmuteSoundBtn.addEventListener("click", onOffSound);
+
+muteMusicBtn.addEventListener("click", onOffMusic);
+unmuteMusicBtn.addEventListener("click", onOffMusic);
 //HIDE/SHOW:
 function hideShow(){
   hideBtn = !hideBtn;
@@ -104,16 +117,32 @@ function hideShow(){
 
   }
 }
-//AUDIO MUTED/UNMUTED:
-function onOffMusic() {
+//Sound MUTED/UNMUTED:
+function onOffSound() {
   muted = !muted;
   if (muted) {
-    muteBtn.style.display = "none";
-    unmuteBtn.style.display = "block";
+    muteSoundBtn.style.display = "none";
+    unmuteSoundBtn.style.display = "block";
   } else if (!muted) {
-    muteBtn.style.display = "block";
-    unmuteBtn.style.display = "none";
+    muteSoundBtn.style.display = "block";
+    unmuteSoundBtn.style.display = "none";
   }
+}
+//Music MUTED/UNMUTED:
+function onOffMusic(){
+  music = !music;
+  if(music){
+    muteMusicBtn.style.display = "block";
+    unmuteMusicBtn.style.display = "none";
+    nhacnen.play();
+  }
+  else if(!music){
+    muteMusicBtn.style.display = "none";
+    unmuteMusicBtn.style.display = "block";
+    nhacnen.pause();
+  }
+  
+  // nhacnen.pause();
 }
 function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
@@ -136,6 +165,8 @@ function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
   ctx.fillStyle = "purple";
+  ctx.strokeStyle = "black";
+  ctx.stroke();
   ctx.fill();
   ctx.closePath();
 }
@@ -197,7 +228,7 @@ function drawLives() {
 function pauseBtn(event) {
   if (event.keyCode == 32 && play) {
     pause = !pause;
-    console.log(pause);
+    music = false;
     if (pause == true) {
       pauseGame.style.display = "block";
       stop();
@@ -206,9 +237,6 @@ function pauseBtn(event) {
       cont();
     }
   }
-  // if (event.keyCode == 9 && play) {
-  //   console.log(levels);
-  // }
 }
 function keyDownHandle(e) {
   if (!pause) {
@@ -252,6 +280,7 @@ function collisionDetection() {
   }
 }
 function stop() {
+  music = false;
   stopMove = true;
   leftPressed = false;
   rightPressed = false;
@@ -262,7 +291,6 @@ function stop() {
 }
 function cont() {
   stopMove = false;
-  // contBtn.style.display="none";
   dx = keepX;
   dy = keepY;
 }
@@ -309,8 +337,9 @@ function ball_wall() {
     if (!muted) lostLife.play();
     if (lives <= 0) {
       alert("GAME OVER"); // Remake Game here
+
       gameOver = true;
-      lose.play();
+      if(!muted) lose.play();
       document.location.reload();
     } else {
       resetBall();
@@ -368,6 +397,7 @@ function update() {
   collisionDetection();
   gameLose();
   levelUp();
+  onOffMusic();
 }
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -379,6 +409,7 @@ function draw() {
   drawBricks();
 }
 function loop() {
+  if(music) nhacnen.play();
   canvas.style.display = "block";
   menuStart.style.display = "none";
   border.style.display = "none";
