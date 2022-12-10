@@ -452,26 +452,6 @@ form {
     -1px 1px 0 #f2faff;
 }
 
-<<<<<<< HEAD
-
-
-
-=======
-.exit {
-  color: #ffdfed;
-  background: #1a304b;
-  width: 90px;
-  height: 35px;
-  position: absolute;
-  top: 82%;
-  left: 25%;
-  border: 3px solid #f35197;
-  border-radius: 30px;
-  box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
-    0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
-    inset 0 0 6px #a95072, inset 0 0 12px #a95072;
-}
->>>>>>> b4a14484f7e4f8a418453f755beee528a0f5d53c
 .save {
   background: #1a304b;
   width: 90px;
