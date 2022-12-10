@@ -50,18 +50,18 @@ var brick = {
   setTop: 50,
   setLeft: 35,
 };
-if(levels == 1){
-  brick.row=3;
+if (levels == 1) {
+  brick.row = 3;
 }
-if(levels == 2){
-  brick.row= 4;
+if (levels == 2) {
+  brick.row = 4;
 }
-if(levels == 3){
+if (levels == 3) {
   brick.row = 5;
 }
 var bricks = [];
 function createBricks() {
-  for (var c = 0; c < brick.col; c++) { 
+  for (var c = 0; c < brick.col; c++) {
     bricks[c] = [];
     for (var r = 0; r < brick.row; r++) {
       bricks[c][r] = { x: 0, y: 0, status: true };
@@ -71,11 +71,11 @@ function createBricks() {
 createBricks();
 //audio :
 var hitPaddle = new Audio();
-hitPaddle.src ="audio/sounds_hitpaddle.wav";
+hitPaddle.src = "audio/paddlehit.mp3";
 var hitBounds = new Audio();
-hitBounds.src ="audio/sounds_hitbounds.wav";
+hitBounds.src = "audio/hitbricks.mp3";
 var hitWalls = new Audio();
-hitWalls.src ="audio/sounds_hitbounds.wav";
+hitWalls.src = "audio/wall.mp3";
 var win = new Audio();
 win.src = "audio/sounds_wingame.wav";
 var lostLife = new Audio();
@@ -105,13 +105,12 @@ function hideShow(){
   }
 }
 //AUDIO MUTED/UNMUTED:
-function onOffMusic(){
+function onOffMusic() {
   muted = !muted;
-  if(muted){
+  if (muted) {
     muteBtn.style.display = "none";
     unmuteBtn.style.display = "block";
-  }
-  else if(!muted){
+  } else if (!muted) {
     muteBtn.style.display = "block";
     unmuteBtn.style.display = "none";
   }
@@ -120,7 +119,7 @@ function pressStart(event) {
   if (event.keyCode == 38 && play && !pause) {
     startGame = true;
     // hitBounds.muted();
-  if(!muted) hitBounds.play();
+    if (!muted) hitBounds.play();
   }
 }
 function drawBall() {
@@ -169,20 +168,30 @@ function drawBricks() {
     }
   }
 }
+
+const SCORE = new Image();
+SCORE.src = "images/score.png";
 function drawScore() {
-  ctx.font = "16px TimesNewRoman";
-  ctx.fillStyle = "darkblue";
-  ctx.fillText("Score: " + score, 30, 20);
+  ctx.font = "18px Righteous";
+  ctx.fillStyle = "#FFF";
+  ctx.fillText(score, 30, 20);
+  ctx.drawImage(SCORE, 45, 2, (width = 25), (height = 25));
 }
 function drawLevel() {
-  ctx.font = "16px TimesNewRoman";
+  const LEVEL = new Image();
+  LEVEL.src = "images/level-up.png";
+  ctx.font = "18px Righteous";
   ctx.fillStyle = "orange";
-  ctx.fillText("Level: " + levels, canvas.width / 2 - 20, 20);
+  ctx.fillText(levels, canvas.width / 2 - 20, 20);
+  ctx.drawImage(LEVEL, canvas.width / 2 - 10, 0, (width = 30), (height = 30));
 }
 function drawLives() {
-  ctx.font = "16px TimesNewRoman";
+  const LIFE = new Image();
+  LIFE.src = "images/heart.png";
+  ctx.font = "18px Righteous";
   ctx.fillStyle = "red";
-  ctx.fillText("Lives: " + lives, 510, 20);
+  ctx.fillText(lives, 510, 20);
+  ctx.drawImage(LIFE, 530, 0, (width = 30), (height = 30));
 }
 
 function pauseBtn(event) {
@@ -235,7 +244,7 @@ function collisionDetection() {
         ) {
           dy = -dy;
           b.status = !b.status;
-          if(!muted) hitBounds.play();
+          if (!muted) hitBounds.play();
           score++;
         }
       }
@@ -288,18 +297,18 @@ function resetBall() {
 function ball_wall() {
   if (x + dx > canvas.width - ballRadius || x - ballRadius < 0) {
     dx = -dx;
-    if(!muted) hitWalls.play();
+    if (!muted) hitWalls.play();
   }
   if (y - ballRadius < 0) {
     dy = -dy;
-    if(!muted) hitWalls.play();
+    if (!muted) hitWalls.play();
   }
   if (y + ballRadius > canvas.height) {
     lives--;
     startGame = false;
-    if(!muted) lostLife.play();
+    if (!muted) lostLife.play();
     if (lives <= 0) {
-      alert("GAME OVER");
+      alert("GAME OVER"); // Remake Game here
       gameOver = true;
       lose.play();
       document.location.reload();
@@ -320,8 +329,7 @@ function handleBall() {
     let angle = collisionPoint * (Math.PI / 3);
     dx = ballSpeed * Math.sin(angle);
     dy = -ballSpeed * Math.cos(angle);
-    if(!muted) hitPaddle.play();
-
+    if (!muted) hitPaddle.play();
   }
 }
 function levelUp() {
@@ -334,8 +342,8 @@ function levelUp() {
   if (isLevelDone) {
     if (levels >= maxLevel) {
       gameOver = true;
-      if(!muted) win.play();
-      alert("Thắng rồi chơi gì nữa?");
+      if (!muted) win.play();
+      alert("Thắng rồi chơi gì nữa?"); // LeaderBoard here
       location.reload();
       return;
     }
@@ -343,7 +351,8 @@ function levelUp() {
     createBricks();
     resetBall();
     levels++;
-    if(!muted) win.play();
+    ballSpeed += 0.5;
+    if (!muted) win.play();
     startGame = false;
   }
 }

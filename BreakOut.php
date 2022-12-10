@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
-</head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link
 href="https://fonts.googleapis.com/css?family=Righteous"
@@ -17,8 +16,7 @@ rel="stylesheet"
 />
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/phosphor-icons"></script>
-<title>Game break wall</title>
-
+<title>BRICK BREAKER</title>
 </head>
 <body>
     <!-- pause -->
@@ -55,7 +53,8 @@ rel="stylesheet"
                     </div>
                     <p id="alert"></p>
                     <button  id="login" type="button" class="btn btn-default"><ion-icon class="game" name="game-controller-outline"></ion-icon>
-                        <p id="login-text">LOGIN</p></button>
+                        <p id="login-text">LOGIN</p>
+                    </button>
                     <button id="setting" type="button" class="btn btn-default" onclick="settingPopUp()">
                         <ion-icon class="setting" name="settings-outline"></ion-icon>
                         <p id="setting-text">SETTING</p>
@@ -71,15 +70,20 @@ rel="stylesheet"
                         <div class="toggle">
                             <div class="button" onclick="onOffMusic()"></div>
                         </div>
-                        <div class="text-button">OFF</div>
+                        <div class="text-button">ON</div>
                     </div>
                     <div class="sound"><ion-icon name="musical-note-outline" id = "sound"></ion-icon><span id ="sound-text">SOUND</span></div>
                     <div class="container2">
                         <div class="toggle2">
                             <div class="button2" onclick="onOffSound()"></div>
                         </div>
-                        <div class="text-button2">OFF</div>
-                        <div></div>
+                        <div class="text-button2">ON</div>
+                    </div>
+                    <div class="exit">
+                        <div id="exit-text">EXIT</div>
+                    </div>
+                    <div class="save">
+                        <div id ="save-text">SAVE</div>
                     </div>
                 </div>
             </div>

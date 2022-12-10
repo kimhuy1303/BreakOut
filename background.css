@@ -76,7 +76,7 @@ body {
   position: relative;
   width: 100%;
   height: 50px;
-  margin-top: -20px;
+  margin-top: -87px;
   display: block;
   font-size: 50px;
   display: fle;
@@ -146,7 +146,7 @@ body {
 }
 
 form {
-  margin: -70px 0 0 0;
+  margin-top: -120px;
   position: relative;
 }
 
@@ -281,10 +281,21 @@ form {
   margin: 0 auto;
   display: none;
   animation-name: float;
-  animation-duration: 0.3s;
+  animation-duration: 0.8s;
   border: 7px solid #accef8;
   box-shadow: 0 0 1px #accef8, 0 0 2px #accef8, 0 0 6px #accef8, 0 0 12px #accef8, inset 0 0 1px #accef8, inset 0 0 2px #accef8, inset 0 0 6px #accef8, inset 0 0 12px #accef8;
 }
+
+
+@keyframes float {
+  0% {position: absolute; width: 450px; height: 90px; top: 1%; left: 0; right: 0; margin: 0 auto;}
+}
+
+/* @keyframes float2 {
+  from {width: 450px; height: 300px; top: 48%;}
+  to {width: 450px; height: 0; top: 1%;}
+} */
+
 .music{
   width: 200px;
   margin-left: 20px;
@@ -335,13 +346,17 @@ form {
 }
 .container {
   position: absolute;
-  left: 77%;
+  left: 63.5%;
   top: 25px;
+  width: 60px;
+  height: 26px;
 }
 .container2 {
   position: absolute;
   left: 63.5%;
   top: 80px;
+  width: 60px;
+  height: 26px;
 }
 
 .toggle {
@@ -350,7 +365,7 @@ form {
   left: -5%;
   width: 60px;
   height: 26px;
-  background-color: #e83a91;
+  background-color: rgb(75, 210, 161);
   border-radius: 30px;
 }
 .toggle2 {
@@ -359,14 +374,23 @@ form {
   left: -5%;
   width: 60px;
   height: 26px;
-  background-color: #e83a91;
+  background-color: rgb(75, 210, 161);
   border-radius: 30px;
 }
-.on {
-  background-color: rgb(75, 210, 161);
+.off {
+  background-color: #e83a91;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 60px;
+  height: 26px;
 }
-.on2 {
-  background-color: rgb(75, 210, 161);
+.off2 {
+  background-color: #e83a91;
+  top: 0;
+  left: -5%;
+  width: 60px;
+  height: 26px;
 }
 .button {
   position: absolute;
@@ -399,6 +423,7 @@ form {
 }
 
 .text-button {
+  margin-left: 60px;
   position: absolute;
   line-height: -3px;
   color: #889ABC;
@@ -420,6 +445,61 @@ form {
 
 
 
-@keyframes float {
-    0% {width: 450px; height:50px ;top: 86%}
+.exit {
+  color: #ffdfed;
+  background:#1a304b;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  top: 82%;
+  left: 25%;
+  border: 3px solid #f35197;
+  border-radius: 30px;
+  box-shadow: 0 0 1px #a95072, 0 0 2px #a95072, 0 0 6px #a95072,
+    0 0 12px #a95072, inset 0 0 1px #a95072, inset 0 0 2px #a95072,
+    inset 0 0 6px #a95072, inset 0 0 12px #a95072;
 }
+.save {
+  background: #1a304b;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  top: 82%;
+  left: 54%;
+  color: white;
+  border: 3px solid rgb(75, 181, 210);
+  border-radius: 30px;
+  box-shadow: 0 0 1px rgb(75, 181, 210), 0 0 2px rgb(75, 181, 210), 0 0 6px rgb(75, 181, 210),
+    0 0 12px rgb(75, 181, 210), inset 0 0 1px rgb(75, 181, 210), inset 0 0 2px rgb(75, 181, 210),
+    inset 0 0 6px rgb(75, 181, 210), inset 0 0 12px rgb(75, 181, 210);
+}
+
+#exit-text {
+  padding-top: 1%;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "Rightenous";
+}
+#save-text {
+  padding-bottom: 3%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 3px;
+  font-family: "Rightenous";
+}
+
+.exit:hover {
+  background-color: #f35184;
+  box-shadow: 0 0 10px #f35184, 0 0 30px #f35184, 0 0 30px #f35184;
+  color: black;
+  cursor: pointer;
+}
+.save:hover {
+  background-color: rgb(75, 181, 210);
+  box-shadow: 0 0 10px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210), 0 0 30px rgb(75, 181, 210);
+  color: black;
+  cursor: pointer;
+}
+
