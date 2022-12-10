@@ -457,6 +457,7 @@ form {
   width: 90px;
   height: 35px;
   position: absolute;
+  display: block;
   top: 82%;
   left: 40%;
   color: white;
